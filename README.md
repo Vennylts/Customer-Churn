@@ -74,3 +74,16 @@ There will be 5 experiments to be conducted, each with the objective of enhancin
 | ----------- | -------------- | -------------- | -------- | --------- | ------ | -------- | ------- |
 | 5           | 1000           | 10 | 0.980    | 0.972     | 0.989  | 0.980    | 0.998   |
 
+### Discussion
+The primary metric of interest in this context is recall, as it is crucial to accurately identify customers who are likely to churn. However, precision, accuracy, F1-Score, and AUC-ROC are also important to ensure the overall quality of the model.
+- Experiment 5 stands out as the most effective model for predicting customer churn. It achieved the highest recall score of **0.989**, which indicates that it was able to correctly identify **98.9%** of the customers who churned.
+- Experiment 5 also demonstrated strong performance across all metrics, with an accuracy of 0.980, precision of 0.972, F1-Score of 0.989, and AUC-ROC of 0.998.
+- The model of Experiment 5 will be used as the proposed model to compare with the benchmark model.
+
+### Model Comparison (Benchmark Model vs Proposed Model)
+| Model                   | Algorithm                | Accuracy | Recall    | AUC-ROC |
+| ----------------------- | ------------------------ | -------- | --------- | ------- |
+| Benchmark (Article 3)   | Random Forest Classifier | 0.9610   | 0.9906    | 0.9889  |
+| Proposed (Experiment 5) | Random Forest Classifier | 0.9799   | 0.9888    | 0.9979  |
+
+Upon comparison of the best proposed model (Experiment 5) with the benchmark model (Article 3), it is observed that the proposed model did not outperform the benchmark model in terms of recall. While the proposed model achieved a recall of 0.9888, the benchmark model achieved a significantly higher recall of 0.9906. This suggests that the benchmark model was more successful in correctly identifying customers who are likely to churn. However, the proposed model did achieve a higher accuracy (0.9799) and AUC-ROC (0.9979) compared to the benchmark model (0.9610) and (0.9889), indicating that it was slightly better at correctly classifying customers overall and more effective at distinguishing between churners and non-churners compared to the benchmark model.
