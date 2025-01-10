@@ -44,8 +44,33 @@ The [predicting credit card customer segmentation](https://www.kaggle.com/datase
 - **Area Under ROC Curve (AUC-ROC):** Measure of separability, indicating how much the model is capable of distinguishing between classes.
 
 ### Implementation:
-- **4.1 Experimental Design:**
-| Experiment | Pre-processing | Fine-tuning | Model |
+#### **4.1 Experimental Design:**
+There will be 5 experiments to be conducted, each with the objective of enhancing the accuracy of customer attrition predictions. Throughout all five experiments, the pre-processing techniques and the model will remain constant, while different fine-tuning methods will be employed such as experimenting on the number of trees of the Random Forest and k-folds cross-validation where k refers to the number of times the dataset will be divided into.
+- **Fine-tuning 1: Vary the Number of Trees Experiment**
+  - **Experiment 1:** The number of trees = 100
+  - **Experiment 2:** The number of trees = 1000
+- **Fine-Tuning 2: Vary the Number of k-Folds Cross-Validation Experiment**
+  - **Experiment 3:** 5-fold cross-validation
+  - **Experiment 4:** 10-fold cross-validation
+- **Combining Both Best Hypothesised Fine-Tuning Methods Experiment**
+  - **Experiment 5:** 1. The number of trees = 1000
+                      2.  10-fold cross-validation
 
-## Comparison
+## 5.0 Performance Comparison
+### **Fine-tuning 1: Vary the Number of Trees Experiment**
+| Experiment  | Number of Tree | Accuracy | Precision | Recall | F1-Score | AUC-ROC |
+| ----------- | -------------- | -------- | --------- | ------ | -------- | ------- |
+| 1           | 100            | 0.948    | 0.815     | 0.875  | 0.844    | 0.919   |
+| 2           | 1000           | 0.948    | 0.813     | 0.872  | 0.843    | 0.917   |
+
+### **Fine-Tuning 2: Vary the Number of k-Folds Cross-Validation Experiment**
+| Experiment  | Number of cross-validation folds (k) | Accuracy | Precision | Recall | F1-Score | AUC-ROC |
+| ----------- | -------------------- | -------- | --------- | ------ | -------- | ------- |
+| 3           | 5            | 0.977    | 0.972     | 0.983  | 0.977    | 0.997   |
+| 4           | 10           | 0.979    | 0.971     | 0.987  | 0.979    | 0.998   |
+
+### **Combining Both Best Hypothesised Fine-Tuning Methods Experiment**
+| Experiment  | Number of Tree | Number of cross-validation folds (k) | Accuracy | Precision | Recall | F1-Score | AUC-ROC |
+| ----------- | -------------- | -------------- | -------- | --------- | ------ | -------- | ------- |
+| 5           | 1000           | 10 | 0.980    | 0.972     | 0.989  | 0.980    | 0.998   |
 
